@@ -26,7 +26,7 @@
             mods = <(MOD_LGUI|MOD_RGUI)>;
         };
         // Implement the mod-morph for "Backspace Delete"
-        bspc_del: behavior-mod-morph {
+        bspc_del: backspace_delete {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             label = "BSPC/DEL";
