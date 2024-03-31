@@ -18,9 +18,10 @@
 /{
 // Implement the mod-morph for "Escape Tab"
     behaviors {
-        esctab: grave_escape {
+        esctab: behavior-mod-morp {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
+            label = "ESC/TAB";
             bindings = <&kp TAB>, <&kp ESC>;
             mods = <(MOD_LGUI|MOD_RGUI)>;
         };
@@ -29,9 +30,10 @@
 / {
 // Implement the mod-morph for "Backspace Delete"
     behaviors {
-        bspc_del: backspace_delete {
+        bspc_del: behavior-mod-morp {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
+            label = "BSPC/DEL";
             bindings = <&kp BACKSPACE>, <&kp DELETE>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
@@ -44,7 +46,7 @@
 
                 default_layer {
 // -----------------------------------------------------------------------------------------
-// | ESC/TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BKSP |
+// | ESC/TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BKSP/DEL |
 // | SHFT |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
 // | CTRL |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | ENT  |
 //                    | CTRL| ALT | GUI |   | SPC | RGUI | SHFT |
