@@ -12,6 +12,7 @@
 #define DEFAULT 0
 #define LOWER   1
 #define RAISE   2
+#define MEDIA   3
 
 
 
@@ -51,7 +52,7 @@
    &esctab    &kp Q &kp W &kp E &kp R &kp T           &kp Y &kp U  &kp I     &kp O   &kp P    &bspc_del
    &kp LSHFT  &kp A &kp S &kp D &kp F &kp G           &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SQT
    &kp LCTRL  &kp Z &kp X &kp C &kp V &kp B           &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp RET
-                    &kp LALT &kp LGUI &lt RAISE SPACE &lt LOWER SPACE &kp RGUI &kp RSHFT
+                    &lt MEDIA LALT &kp LGUI &lt RAISE SPACE &lt LOWER SPACE &kp RGUI &kp RSHFT
                         >;
                 };
 
@@ -83,5 +84,20 @@
                              &kp LALT &kp LGUI &trans      &trans &kp RGUI  &kp RSHFT
                         >;
                 };
+
+                media_layer {
+// -----------------------------------------------------------------------------------------
+// | BRI_DN | BRI_UP |     |     |     |   |     |     |    |    |    |    |   |
+// | VOL_DN | VOL_UP |     |     |     |   |     |     |    |    |    |    |   |
+// |        |        |     |     |     |   |     |     |    |    |    |    |   |
+//                   | ALT | GUI |     |   |     | GUI | ALT |
+                bindings = <
+   &kp C_BRI_DN &kp C_BRI_UP &trans &trans &trans &trans   &trans  &trans  &trans  &trans &trans &trans
+   &kp C_VOL_DN &kp C_VOL_UP &trans &trans &trans &trans   &trans  &trans  &trans  &trans &trans &trans
+   &trans       &trans       &trans &trans &trans &trans   &trans  &trans  &trans  &trans &trans &trans
+                             &kp LALT &kp LGUI &trans      &trans &kp RGUI  &kp RSHFT
+                        >;
+                };
+
         };
 };
