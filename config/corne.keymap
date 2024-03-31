@@ -13,22 +13,47 @@
 #define LOWER   1
 #define RAISE   2
 
+
+
+/{
+// Implement the mod-morph for "Escape Tab"
+    behaviors {
+        esctab: grave_escape {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp TAB>, <&kp ESC>;
+            mods = <(MOD_LGUI|MOD_RGUI)>;
+        };
+    };
+};
+/ {
+// Implement the mod-morph for "Backspace Delete"
+    behaviors {
+        bspc_del: backspace_delete {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp BACKSPACE>, <&kp DELETE>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+    };
+};
+
 / {
         keymap {
                 compatible = "zmk,keymap";
 
                 default_layer {
 // -----------------------------------------------------------------------------------------
-// | mt ESC/TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BKSP |
+// | ESC/TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BKSP |
 // | SHFT |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
 // | CTRL |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | ENT  |
-//                    | CTRL| ALT | GUI |   | SPC | RGUI | ALT |
+//                    | CTRL| ALT | GUI |   | SPC | RGUI | SHFT |
                         
                 bindings = <
-   &mt ESC TAB   &kp Q &kp W &kp E &kp R &kp T            &kp Y &kp U  &kp I     &kp O   &kp P    &kp BSPC
+   &esctab    &kp Q &kp W &kp E &kp R &kp T           &kp Y &kp U  &kp I     &kp O   &kp P    &bspc_del
    &kp LSHFT  &kp A &kp S &kp D &kp F &kp G           &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SQT
-   &kp LCTRL &kp Z &kp X &kp C &kp V &kp B            &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp RET
-                  &kp LALT &kp LGUI &lt RAISE SPACE   &lt LOWER SPACE &kp RGUI &kp RALT
+   &kp LCTRL  &kp Z &kp X &kp C &kp V &kp B           &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp RET
+                    &kp LALT &kp LGUI &lt RAISE SPACE &lt LOWER SPACE &kp RGUI &kp RSHFT
                         >;
                 };
 
@@ -43,7 +68,7 @@
    &kp GRAVE  &kp N1       &kp N2       &kp N3       &kp N4       &kp N5         &kp N6   &kp N7   &kp N8 &kp N9    &kp N0 &kp BSPC
    &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4   &kp LEFT &kp DOWN &kp UP &kp RIGHT &trans &trans
    &kp LCTRL  &trans       &trans       &trans       &trans       &trans         &trans   &trans   &trans &trans    &trans &trans
-                                        &kp LATL     &kp LGUI     &kp SPACE      &kp SPACE  &kp RGUI   &kp RALT
+                                        &kp LATL     &kp LGUI     &kp SPACE      &kp SPACE  &kp RGUI   &kp RSHFT
                         >;
                 };
 
@@ -57,7 +82,7 @@
    &kp TILDE &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT   &kp CARET &kp AMPS  &kp ASTRK &kp LPAR &kp RPAR &kp BSPC
    &kp LSHFT &trans   &trans &trans   &trans   &trans      &kp MINUS &kp EQUAL &kp LBKT  &kp RBKT &kp BSLH &kp GRAVE
    &kp LCTRL &trans   &trans &trans   &trans   &trans      &kp UNDER &kp PLUS  &kp LBRC  &kp RBRC &kp PIPE &kp TILDE
-                             &kp LATL &kp LGUI &kp SPACE   &kp SPACE &kp RGUI  &kp RALT
+                             &kp LATL &kp LGUI &kp SPACE   &kp SPACE &kp RGUI  &kp RSHFT
                         >;
                 };
         };
