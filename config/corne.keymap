@@ -38,6 +38,19 @@
 };
 
 / {
+    macros {
+        lock_screen: lock_screen {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp LGUI &kp LCTRL &kp Q>
+                ;
+        };
+    };
+};
+
+
+/ {
         keymap {
                 compatible = "zmk,keymap";
 
@@ -92,7 +105,7 @@
 // |        |        |     |     |     |   |     |     |    |    |    |    |   |
 //                   | ALT | GUI |     |   |     | GUI | ALT |
                 bindings = <
-   &kp C_BRI_DN &kp C_BRI_UP &trans     &trans &trans &trans   &trans  &trans  &trans  &trans &kp C_PWR &kp LGUI LCTRL Q
+   &kp C_BRI_DN &kp C_BRI_UP &trans     &trans &trans &trans   &trans  &trans  &trans  &trans &kp C_PWR &lock_screen
    &kp C_VOL_DN &kp C_VOL_UP &kp C_MUTE &trans &trans &trans   &trans  &trans  &trans  &trans &trans &trans
    &trans       &trans       &trans     &trans &trans &trans   &trans  &trans  &trans  &trans &trans &trans
                              &kp LALT   &kp LGUI &trans      &trans &kp RGUI  &kp RSHFT
