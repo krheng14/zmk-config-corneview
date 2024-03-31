@@ -16,21 +16,17 @@
 
 
 /{
-// Implement the mod-morph for "Escape Tab"
     behaviors {
-        esctab: behavior-mod-morp {
+        // Implement the mod-morph for "Escape Tab"
+        esctab: behavior-mod-morph {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             label = "ESC/TAB";
             bindings = <&kp TAB>, <&kp ESC>;
             mods = <(MOD_LGUI|MOD_RGUI)>;
         };
-    };
-};
-/ {
-// Implement the mod-morph for "Backspace Delete"
-    behaviors {
-        bspc_del: behavior-mod-morp {
+        // Implement the mod-morph for "Backspace Delete"
+        bspc_del: behavior-mod-morph {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             label = "BSPC/DEL";
