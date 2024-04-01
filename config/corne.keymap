@@ -18,13 +18,15 @@
 
 / {
     macros {
-        lock_screen: lock_screen {
+        mac_slp: mac_slp {
         compatible = "zmk,behavior-macro-two-param";
         #binding-cells = <2>;
         wait-ms = <30>;
         tap-ms = <40>;
         bindings = <&macro_press &kp LCTRL &kp LGUI &kp Q>
                  , <&macro_release &kp LCTRL &kp LGUI &kp Q>
+                 , <&macro_press &kp ESC>
+                 , <&macro_release &kp ESC>
                  ;
         };
     };
@@ -107,7 +109,7 @@
 // |          |     |     |     |     |     |  |          |          |      |     |     |     |
 //                        | ALT | GUI |     |  |          | GUI      | ALT  |
                 bindings = <
-   &bt BT_CLR &trans &trans &trans &trans &trans       &kp C_BRI_DN  &kp C_BRI_UP  &trans      &trans &trans &lock_screen
+   &bt BT_CLR &trans &trans &trans &trans &trans       &kp C_BRI_DN  &kp C_BRI_UP  &trans      &trans &trans &mac_slp
    &trans     &trans &trans &trans &trans &trans       &kp C_VOL_DN  &kp C_VOL_UP  &kp C_MUTE  &trans &trans &trans
    &trans     &trans &trans &trans &trans &trans       &trans        &trans        &trans      &trans &trans &trans
                             &kp LALT &kp LGUI &trans   &trans &kp RGUI  &kp RSHFT
