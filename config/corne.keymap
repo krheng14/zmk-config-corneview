@@ -45,11 +45,15 @@
             key-positions = <9 10>;
             bindings = <&kp DEL>;
         };
-        combo_media_layer {
-            timeout-ms = <50>;
-            key-positions = <4 5>;
-            slow-release = true;
-            bindings = <&mo MEDIA>;
+    };
+};
+
+/ {
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+        tri_layer {
+            if-layers = <1 2>;
+            then-layer = <3>;
         };
     };
 };
