@@ -16,27 +16,6 @@
 
 
 
-/{
-    behaviors {
-        // Implement the mod-morph for "Escape Tab"
-        esctab: behavior-mod-morph {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            label = "ESC/TAB";
-            bindings = <&kp TAB>, <&kp ESC>;
-            mods =<(MOD_LGUI|MOD_RGUI)>;
-        };
-        // Implement the mod-morph for "Backspace Delete"
-        bspc_del: backspace_delete {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            label = "BSPC/DEL";
-            bindings = <&kp BACKSPACE>, <&kp DELETE>;
-            mods = <(MOD_LGUI|MOD_RGUI)>;
-        };
-    };
-};
-
 / {
     macros {
         lock_screen: lock_screen {
@@ -57,6 +36,11 @@
             key-positions = <1 2>;
             bindings = <&kp ESC>;
         };
+        combo_del {
+            timeout-ms = <50>;
+            key-positions = <9 10>;
+            bindings = <&kp DEL>;
+        };
     };
 };
 
@@ -67,13 +51,13 @@
 
                 default_layer {
 // -----------------------------------------------------------------------------------------
-// | ESC/TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BKSP/DEL |
-// | SHFT    |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
-// | CTRL    |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | ENT  |
+// | TAB  |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BKSP |
+// | SHFT |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
+// | CTRL |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | ENT  |
 //                    | CTRL| ALT | GUI |   | SPC | RGUI | SHFT |
                         
                 bindings = <
-   &esctab    &kp Q &kp W &kp E &kp R &kp T           &kp Y &kp U  &kp I     &kp O   &kp P    &bspc_del
+   &kp TAB    &kp Q &kp W &kp E &kp R &kp T           &kp Y &kp U  &kp I     &kp O   &kp P    &kp BKSP
    &kp LSHFT  &kp A &kp S &kp D &kp F &kp G           &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SQT
    &kp LCTRL  &kp Z &kp X &kp C &kp V &kp B           &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp RET
                     &lt MEDIA LALT &kp LGUI &lt RAISE SPACE &lt LOWER SPACE &kp RGUI &lt MEDIA RSHFT
