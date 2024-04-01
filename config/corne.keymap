@@ -25,6 +25,13 @@
                 = <&kp LGUI &kp LCTRL &kp Q>
                 ;
         };
+        my_zero_param_macro: my_zero_param_macro {
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        wait-ms = <30>;
+        tap-ms = <40>;
+        bindings = <&kp Z &kp M &kp K>;
+    };
     };
 };
 
@@ -96,11 +103,11 @@
                 media_layer {
 // -----------------------------------------------------------------------------------------
 // |     |     |     |     |     |     |  |  BRI_DN  |  BRI_UP  |      |     |     |     | 
-// |     |     |     |     |     |     |  |  VOL_DN  | VOL_UP   | MUTE |     |     |     |
+// |     |     |     |     |     |     |  |  VOL_DN  |  VOL_UP  | MUTE |     |     |     |
 // |     |     |     |     |     |     |  |          |          |      |     |     |     |
 //                   | ALT | GUI |     |  |          | GUI      | ALT  |
                 bindings = <
-   &trans &trans &trans &trans &trans &trans   &kp C_BRI_DN  &kp C_BRI_UP  &trans      &trans &trans &trans
+   &trans &trans &trans &trans &trans &trans   &kp C_BRI_DN  &kp C_BRI_UP  &trans      &trans &trans &my_zero_param_macro
    &trans &trans &trans &trans &trans &trans   &kp C_VOL_DN  &kp C_VOL_UP  &kp C_MUTE  &trans &trans &trans
    &trans &trans &trans &trans &trans &trans   &trans        &trans        &trans      &trans &trans &trans
                     &kp LALT &kp LGUI &trans   &trans &kp RGUI  &kp RSHFT
