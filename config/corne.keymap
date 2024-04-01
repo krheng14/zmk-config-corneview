@@ -24,7 +24,7 @@
             #binding-cells = <0>;
             label = "ESC/TAB";
             bindings = <&kp TAB>, <&kp ESC>;
-            mods = <(MOD_LGUI|MOD_RGUI)>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
         };
         // Implement the mod-morph for "Backspace Delete"
         bspc_del: backspace_delete {
@@ -34,6 +34,46 @@
             bindings = <&kp BACKSPACE>, <&kp DELETE>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
+        // Implement the mod-morph for "Volume Down
+        vol_dn: vol_dn {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            label = "RGUI/VOL_DN";
+            bindings = <&kp H>, <&kp C_VOL_DN>;
+            mods = <(MOD_RGUI)>;
+        };
+        // Implement the mod-morph for "Volume Up"
+        vol_up: vol_up {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            label = "RGUI/VOL_UP";
+            bindings = <&kp J>, <&kp C_VOL_UP>;
+            mods = <(MOD_RGUI)>;
+        };
+        // Implement the mod-morph for "Volume Mute"
+        vol_m: vol_m {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            label = "RGUI/VOL_M";
+            bindings = <&kp K>, <&kp C_VOL_MUTE>;
+            mods = <(MOD_RGUI)>;
+        };    
+        // Implement the mod-morph for "Brightness Down"
+        bri_dn: bri_dn {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            label = "RGUI/BRI_DN";
+            bindings = <&kp Y>, <&kp C_BRI_DN>;
+            mods = <(MOD_RGUI)>;
+        };  
+        // Implement the mod-morph for "Brightness Up"
+        bri_up: bri_up {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            label = "RGUI/BRI_UP";
+            bindings = <&kp U>, <&kp C_BRI_UP>;
+            mods = <(MOD_RGUI)>;
+        };        
     };
 };
 
@@ -56,29 +96,29 @@
 
                 default_layer {
 // -----------------------------------------------------------------------------------------
-// | ESC/TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BKSP/DEL |
-// | SHFT |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
-// | CTRL |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | ENT  |
-//                    | CTRL| ALT | GUI |   | SPC | RGUI | SHFT |
+// | ESC/TAB |  Q  |  W  |  E  |  R  |  T  |  |  Y  |  U  |  I  |  O  |  P  | BKSP/DEL |
+// | SHFT    |  A  |  S  |  D  |  F  |  G  |  |  H  |  J   |  K  |  L  |  ;  |  '   |
+// | CTRL    |  Z  |  X  |  C  |  V  |  B  |  |  N  |  M   |  ,  |  .  |  /  | ENT  |
+//                       | CTRL| ALT | GUI |  | SPC | RGUI | SHFT |
                         
                 bindings = <
-   &esctab    &kp Q &kp W &kp E &kp R &kp T           &kp Y &kp U  &kp I     &kp O   &kp P    &bspc_del
-   &kp LSHFT  &kp A &kp S &kp D &kp F &kp G           &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SQT
+   &esctab    &kp Q &kp W &kp E &kp R &kp T           &C_BRI_DN &C_BRI_UP  &kp I     &kp O   &kp P    &bspc_del
+   &kp LSHFT  &kp A &kp S &kp D &kp F &kp G           &C_VOL_DN &C_VOL_UP  &C_VOL_MUTE    &kp L   &kp SEMI &kp SQT
    &kp LCTRL  &kp Z &kp X &kp C &kp V &kp B           &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp RET
-                    &lt MEDIA LALT &kp LGUI &lt RAISE SPACE &lt LOWER SPACE &kp RGUI &kp RSHFT
+                    &kp LALT &kp LGUI &lt RAISE SPACE &lt LOWER SPACE &kp RGUI &kp RSHFT
                         >;
                 };
 
                 lower_layer {
 // -----------------------------------------------------------------------------------------
 // |   `  |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BKSP |
-// | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |      |
+// |      | BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |      |
 // | CTRL |     |     |     |     |     |   |     |     |     |     |     |      |
 //                    | ALT | GUI |     |   |     | GUI | ALT |
                 
                 bindings = <
    &kp GRAVE  &kp N1       &kp N2       &kp N3       &kp N4       &kp N5         &kp N6   &kp N7   &kp N8 &kp N9    &kp N0 &kp BSPC
-   &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4   &kp LEFT &kp DOWN &kp UP &kp RIGHT &trans &trans
+   &trans     &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4   &kp LEFT &kp DOWN &kp UP &kp RIGHT &trans &trans
    &kp LCTRL  &trans       &trans       &trans       &trans       &trans         &trans   &trans   &trans &trans    &trans &trans
                                         &kp LALT     &kp LGUI     &trans         &trans   &kp RGUI &kp RSHFT
                         >;
@@ -97,20 +137,5 @@
                              &kp LALT &kp LGUI &trans      &trans &kp RGUI  &kp RSHFT
                         >;
                 };
-
-                media_layer {
-// -----------------------------------------------------------------------------------------
-// | BRI_DN | BRI_UP |     |     |     |   |     |     |    |    |    |  SCR_OFF  | LOC_SCR |
-// | VOL_DN | VOL_UP | MUTE|     |     |   |     |     |    |    |    |    |   |
-// |        |        |     |     |     |   |     |     |    |    |    |    |   |
-//                   | ALT | GUI |     |   |     | GUI | ALT |
-                bindings = <
-   &kp C_BRI_DN &kp C_BRI_UP &trans     &trans &trans &trans   &trans  &trans  &trans  &trans &kp C_PWR &lock_screen
-   &kp C_VOL_DN &kp C_VOL_UP &kp C_MUTE &trans &trans &trans   &trans  &trans  &trans  &trans &trans &trans
-   &trans       &trans       &trans     &trans &trans &trans   &trans  &trans  &trans  &trans &trans &trans
-                             &kp LALT   &kp LGUI &trans      &trans &kp RGUI  &kp RSHFT
-                        >;
-                };
-
         };
 };
