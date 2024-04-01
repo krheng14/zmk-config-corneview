@@ -25,7 +25,7 @@
         wait-ms = <30>;
         tap-ms = <40>;
         bindings = <&macro_press &kp LCTRL &kp LGUI>
-                 , <&macro_tap &kp Q &kp ESC &tog 0>
+                 , <&kp Q &kp ESC>
                  , <&macro_release &kp LCTRL &kp LGUI>
                  ;
         };
@@ -48,7 +48,8 @@
         combo_media_layer {
             timeout-ms = <50>;
             key-positions = <4 5>;
-            bindings = <&tog MEDIA>;
+            slow-release = true;
+            bindings = <&mo MEDIA>;
         };
     };
 };
