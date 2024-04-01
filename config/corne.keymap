@@ -19,18 +19,11 @@
 / {
     macros {
         lock_screen: lock_screen {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&kp LGUI &kp LCTRL &kp Q>
-                ;
-        };
-        my_zero_param_macro: my_zero_param_macro {
         compatible = "zmk,behavior-macro";
         #binding-cells = <0>;
         wait-ms = <30>;
         tap-ms = <40>;
-        bindings = <&kp Z &kp M &kp K>;
+        bindings = <&kp LGUI &kp LCTRL &kp Q>;
     };
     };
 };
@@ -67,7 +60,7 @@
    &kp TAB    &kp Q &kp W &kp E &kp R &kp T           &kp Y &kp U  &kp I     &kp O   &kp P    &kp BKSP
    &kp LSHFT  &kp A &kp S &kp D &kp F &kp G           &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SQT
    &kp LCTRL  &kp Z &kp X &kp C &kp V &kp B           &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp RET
-                    &lt MEDIA LALT &kp LGUI &lt RAISE SPACE &lt LOWER SPACE &kp RGUI &lt MEDIA RSHFT
+                    &kp LALT &kp LGUI &lt RAISE SPACE &lt LOWER SPACE &kp RGUI &lt MEDIA RSHFT
                         >;
                 };
 
@@ -107,7 +100,7 @@
 // |     |     |     |     |     |     |  |          |          |      |     |     |     |
 //                   | ALT | GUI |     |  |          | GUI      | ALT  |
                 bindings = <
-   &trans &trans &trans &trans &trans &trans   &kp C_BRI_DN  &kp C_BRI_UP  &trans      &trans &trans &my_zero_param_macro
+   &trans &trans &trans &trans &trans &trans   &kp C_BRI_DN  &kp C_BRI_UP  &trans      &trans &trans &lock_screen
    &trans &trans &trans &trans &trans &trans   &kp C_VOL_DN  &kp C_VOL_UP  &kp C_MUTE  &trans &trans &trans
    &trans &trans &trans &trans &trans &trans   &trans        &trans        &trans      &trans &trans &trans
                     &kp LALT &kp LGUI &trans   &trans &kp RGUI  &kp RSHFT
