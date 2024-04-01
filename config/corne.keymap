@@ -39,7 +39,7 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             label = "RGUI/VOL_DN";
-            bindings = <&kp H>, <&kp C_VOL_DN>;
+            bindings = <&kp H>, <&C_VOL_DN>;
             mods = <(MOD_RGUI)>;
         };
         // Implement the mod-morph for "Volume Up"
@@ -47,7 +47,7 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             label = "RGUI/VOL_UP";
-            bindings = <&kp J>, <&kp C_VOL_UP>;
+            bindings = <&kp J>, <&C_VOL_UP>;
             mods = <(MOD_RGUI)>;
         };
         // Implement the mod-morph for "Volume Mute"
@@ -55,7 +55,7 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             label = "RGUI/VOL_M";
-            bindings = <&kp K>, <&kp C_VOL_MUTE>;
+            bindings = <&kp K>, <&C_VOL_MUTE>;
             mods = <(MOD_RGUI)>;
         };    
         // Implement the mod-morph for "Brightness Down"
@@ -63,7 +63,7 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             label = "RGUI/BRI_DN";
-            bindings = <&kp Y>, <&kp C_BRI_DN>;
+            bindings = <&kp Y>, <&C_BRI_DN>;
             mods = <(MOD_RGUI)>;
         };  
         // Implement the mod-morph for "Brightness Up"
@@ -71,7 +71,7 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             label = "RGUI/BRI_UP";
-            bindings = <&kp U>, <&kp C_BRI_UP>;
+            bindings = <&kp U>, <&C_BRI_UP>;
             mods = <(MOD_RGUI)>;
         };        
     };
