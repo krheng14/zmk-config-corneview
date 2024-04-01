@@ -102,8 +102,8 @@
 //                       | CTRL| ALT | GUI |  | SPC | RGUI | SHFT |
                         
                 bindings = <
-   &esctab    &kp Q &kp W &kp E &kp R &kp T           &C_BRI_DN &C_BRI_UP  &kp I     &kp O   &kp P    &bspc_del
-   &kp LSHFT  &kp A &kp S &kp D &kp F &kp G           &C_VOL_DN &C_VOL_UP  &C_VOL_MUTE    &kp L   &kp SEMI &kp SQT
+   &esctab    &kp Q &kp W &kp E &kp R &kp T           &bri_dn &bri_up &kp I  &kp O   &kp P    &bspc_del
+   &kp LSHFT  &kp A &kp S &kp D &kp F &kp G           &vol_dn &vol_up &vol_m &kp L   &kp SEMI &kp SQT
    &kp LCTRL  &kp Z &kp X &kp C &kp V &kp B           &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp RET
                     &kp LALT &kp LGUI &lt RAISE SPACE &lt LOWER SPACE &kp RGUI &kp RSHFT
                         >;
