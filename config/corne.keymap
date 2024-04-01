@@ -26,7 +26,7 @@
         tap-ms = <40>;
         bindings = <&macro_press &kp LCTRL &kp LGUI &kp Q>
                  , <&macro_press &kp ESC>
-                 , <&macro_press &combo_media_layer>
+                 , <&macro_press &tog 0>
                  , <&macro_release &kp LCTRL &kp LGUI &kp Q &kp ESC>
                  ;
         };
