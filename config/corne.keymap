@@ -25,7 +25,7 @@
         wait-ms = <30>;
         tap-ms = <40>;
         bindings = <&macro_press &kp LCTRL &kp LGUI>
-                 , <&kp Q &kp ESC>
+                 , <&macro_tap &kp Q &kp ESC>
                  , <&macro_release &kp LCTRL &kp LGUI>
                  ;
         };
@@ -111,15 +111,14 @@
 // -----------------------------------------------------------------------------------------
 // |  BT_CLR  |     |     |     |     |     |  |  BRI_DN  |  BRI_UP  |      |     |     |     | 
 // |          |     |     |     |     |     |  |  VOL_DN  |  VOL_UP  | MUTE |     |     |     |
-// |          |     |     |     |     |     |  |          |          |      |     |     | PWR |
+// |          |     |     |     |     |     |  |          |          |      |     |     | SLP |
 //                        |     |     |     |  |          |          |      |
                 bindings = <
    &bt BT_CLR &trans &trans &trans &trans &trans     &kp C_BRI_DN &kp C_BRI_UP &trans     &trans &trans &trans
    &trans     &trans &trans &trans &trans &trans     &kp C_VOL_DN &kp C_VOL_UP &kp C_MUTE &trans &trans &trans
-   &trans     &trans &trans &trans &trans &trans     &trans       &trans       &trans     &trans &trans &kp C_PWR 
+   &trans     &trans &trans &trans &trans &trans     &trans       &trans       &trans     &trans &trans &mac_slp
                             &trans &trans &trans     &trans &trans  &trans
                         >;
                 };
-
         };
 };
