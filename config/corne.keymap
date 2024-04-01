@@ -39,7 +39,7 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             label = "RGUI/VOL_DN";
-            bindings = <&kp H>, <&C_VOL_DN>;
+            bindings = <&kp H>, <&kp L>;
             mods = <(MOD_RGUI)>;
         };
         // Implement the mod-morph for "Volume Up"
