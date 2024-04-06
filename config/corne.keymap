@@ -48,7 +48,7 @@
         combo_window {
             timeout-ms = <50>;
             key-positions = <24 25 26>;
-            bindings = <&to 4>;
+            bindings = <&tog 4>;
         };
     };
 };
