@@ -86,6 +86,21 @@
                         >;
                 };
 
+                window_layer {
+// -----------------------------------------------------------------------------------------
+// | TAB  |  Q  |  W  |  E  |  R  |  T  |   |  Y  |     |  I  |  O  |  P  | BKSP |
+// | SHFT |  A  |  S  |  D  |  F  |  G  |   |  H  |  J  |  K  |  L  |  ;  |  '   |
+// | CTRL |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M  |  ,  |  .  |  /  | ENT  |
+//                    | GUI | ALT | SPC |   | SPC | GUI | SHFT |
+                        
+                bindings = <
+   &kp TAB    &kp Q &kp W &kp E &kp R &kp T           &kp Y &kp U  &kp I     &kp O   &kp P    &kp BKSP
+   &kp LSHFT  &kp A &kp S &kp D &kp F &kp G           &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SQT
+   &kp LCTRL  &kp Z &kp X &kp C &kp V &kp B           &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp RET
+                    &kp LGUI &kp LALT &lt RAISE SPACE &lt LOWER SPACE &kp RGUI &kp RSHFT
+                        >;
+                };
+
                 lower_layer {
 // -----------------------------------------------------------------------------------------
 // |   `  |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BKSP |
@@ -126,21 +141,6 @@
    &trans     &trans       &trans       &trans       &trans       &trans           &kp C_BRI_DN &kp C_BRI_UP &trans     &trans  &trans  &trans
    &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4     &kp C_VOL_DN &kp C_VOL_UP &kp C_MUTE &trans  &trans  &mac_slp
                                         &trans       &trans       &trans           &trans        &trans       &trans
-                        >;
-                };
-
-                window_layer {
-// -----------------------------------------------------------------------------------------
-// | TAB  |  Q  |  W  |  E  |  R  |  T  |   |  Y  |     |  I  |  O  |  P  | BKSP |
-// | SHFT |  A  |  S  |  D  |  F  |  G  |   |  H  |  J  |  K  |  L  |  ;  |  '   |
-// | CTRL |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M  |  ,  |  .  |  /  | ENT  |
-//                    | GUI | ALT | SPC |   | SPC | GUI | SHFT |
-                        
-                bindings = <
-   &kp TAB    &kp Q &kp W &kp E &kp R &kp T           &kp Y &kp U  &kp I     &kp O   &kp P    &kp BKSP
-   &kp LSHFT  &kp A &kp S &kp D &kp F &kp G           &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SQT
-   &kp LCTRL  &kp Z &kp X &kp C &kp V &kp B           &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp RET
-                    &kp LGUI &kp LALT &lt RAISE SPACE &lt LOWER SPACE &kp RGUI &kp RSHFT
                         >;
                 };
         };
