@@ -10,12 +10,15 @@
 
 // Mapping for different layers
 #define DEFAULT 0
-#define LOWER   1
-#define RAISE   2
-#define MEDIA   3
-#define WINDOW  4
+#define WINDOW  1
+#define LOWER   2
+#define RAISE   3
+#define MEDIA   4
 
 
+&lt {
+    tapping-term-ms = <200>;
+};
 
 / {
     macros {
