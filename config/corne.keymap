@@ -33,7 +33,7 @@
         };
     };
 };
-&kp LPAR &kp RPAR &kp BSPC
+
 / {
     behaviors {
         excl_1: EXCLAMATION_1 {
