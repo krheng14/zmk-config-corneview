@@ -39,14 +39,14 @@
         mo_switch_raise: momentary_switch_raise {
             compatible = "zmk,behavior-mod-morph";
             label = "MOMENTARY_SWITCH_RAISE";
-            #binding-cells = <2>;
+            #binding-cells = <0>;
             bindings = <&kp RAISE>, <&kp LOWER>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
         mo_switch_lower: momentary_switch_lower {
             compatible = "zmk,behavior-mod-morph";
             label = "MOMENTARY_SWITCH_LOWER";
-            #binding-cells = <2>;
+            #binding-cells = <0>;
             bindings = <&kp LOWER>, <&kp RAISE>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
