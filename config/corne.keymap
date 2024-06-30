@@ -47,7 +47,7 @@
             label = "MOMENTARY_SWITCH";
             #binding-cells = <2>;
             bindings = <&mo>, <&mo>;
-            mods = <(MOD_LSHFT|MOD_RSHFT)>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
         };
     };
 };
