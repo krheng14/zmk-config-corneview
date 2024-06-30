@@ -36,34 +36,34 @@
 
 / {
     behaviors {
-        lt_switch_raise: layer_tap_with_switch {
+        lt_switch_raise: layer_tap_with_switch_raise {
             compatible = "zmk,behavior-hold-tap";
-            label = "LAYER_TAP_SWITCH";
+            label = "LAYER_TAP_SWITCH_RAISE";
             #binding-cells = <2>;
             tapping-term-ms = <150>;
             quick-tap-ms = <0>;
             flavor = "balanced";
             bindings = <&mo_switch_raise>, <&kp SPACE>;
         };
-        mo_switch_raise: momentary_switch {
+        mo_switch_raise: momentary_switch_raise {
             compatible = "zmk,behavior-mod-morph";
-            label = "MOMENTARY_SWITCH";
+            label = "MOMENTARY_SWITCH_RAISE";
             #binding-cells = <2>;
             bindings = <2>, <1>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
-        lt_switch_lower: layer_tap_with_switch {
+        lt_switch_lower: layer_tap_with_switch_lower {
             compatible = "zmk,behavior-hold-tap";
-            label = "LAYER_TAP_SWITCH";
+            label = "LAYER_TAP_SWITCH_LOWER";
             #binding-cells = <2>;
             tapping-term-ms = <150>;
             quick-tap-ms = <0>;
             flavor = "balanced";
             bindings = <&mo_switch_lower>, <&kp SPACE>;
         };
-        mo_switch_lower: momentary_switch {
+        mo_switch_lower: momentary_switch_lower {
             compatible = "zmk,behavior-mod-morph";
-            label = "MOMENTARY_SWITCH";
+            label = "MOMENTARY_SWITCH_LOWER";
             #binding-cells = <2>;
             bindings = <1>, <2>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
